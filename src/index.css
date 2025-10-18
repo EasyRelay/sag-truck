@@ -150,6 +150,18 @@ All colors MUST be HSL.
     transform: translateX(0);
   }
 
+  .slide-left {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity var(--duration-small) var(--transition-smooth),
+                transform var(--duration-small) var(--transition-smooth);
+  }
+
+  .slide-left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
   .card-rotate {
     opacity: 0;
     transform: translateY(40px) rotateX(-2deg);
@@ -206,6 +218,7 @@ All colors MUST be HSL.
     .animate-on-scroll,
     .fade-up-scale,
     .slide-right,
+    .slide-left,
     .card-rotate,
     .scale-in {
       opacity: 0;
@@ -216,6 +229,7 @@ All colors MUST be HSL.
     .animate-on-scroll.is-visible,
     .fade-up-scale.is-visible,
     .slide-right.is-visible,
+    .slide-left.is-visible,
     .card-rotate.is-visible,
     .scale-in.is-visible {
       opacity: 1;

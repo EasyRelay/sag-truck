@@ -44,9 +44,11 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className={`bg-accent rounded-lg flex items-center justify-center transition-all group-hover:scale-105 ${isScrolled ? 'w-10 h-10' : 'w-12 h-12'}`}>
-                <span className={`text-accent-foreground font-heading font-bold transition-all ${isScrolled ? 'text-lg' : 'text-xl'}`}>ST</span>
-              </div>
+              <img 
+                src="/image.png" 
+                alt="Sag Trucking Logo"
+                className={`transition-all group-hover:scale-105 object-contain ${isScrolled ? 'w-20 h-20' : 'w-20 h-20'}`}
+              />
             </div>
             <div className="hidden sm:block">
               <span className={`font-heading font-bold text-foreground transition-all ${isScrolled ? 'text-lg' : 'text-xl'}`}>Sag Trucking</span>

@@ -85,8 +85,8 @@ const Footer = () => {
               <p className="mb-1">
                 © {currentYear} Sag Trucking. All rights reserved.
               </p>
-              <p className="text-xs">
-                USDOT: 3720632 | MC: 1309439 | EIN: 45-2608172 (Owner: Amjad Matar)
+              <p className="text-md">
+                Created by <a href='https://easyit.uz' target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">EasyIT</a>
               </p>
             </div>
             <div className="text-sm text-muted-foreground">
@@ -98,6 +98,9 @@ const Footer = () => {
               >
                 sagtrucking.com
               </a>
+              <p className="text-xs">
+                USDOT: 3720632 | MC: 1309439 | EIN: 45-2608172 (Owner: Amjad Matar)
+              </p>
             </div>
           </div>
         </div>

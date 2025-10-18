@@ -68,8 +68,7 @@ const HeroSection = () => {
             <a
               ref={ctaLeftRef}
               href="tel:+14402993900"
-              className="opacity-0 -translate-x-12"
-              style={{ transition: 'all 600ms cubic-bezier(0.22, 0.8, 0.1, 1)' }}
+              className="slide-left"
             >
               <Button
                 size="lg"
@@ -82,13 +81,12 @@ const HeroSection = () => {
             <a
               ref={ctaRightRef}
               href="mailto:safety.saggroup@gmail.com"
-              className="opacity-0 translate-x-12"
-              style={{ transition: 'all 600ms cubic-bezier(0.22, 0.8, 0.1, 1)' }}
+              className="slide-right"
             >
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto gap-3 border-2 border-muted-foreground/30 text-foreground hover:bg-foreground/5 text-lg px-8 py-6 font-bold transition-transform hover:scale-105"
+                className="w-full sm:w-auto gap-3 border-2 border-muted-foreground/30 text-foreground  text-lg px-8 py-6 font-bold transition-transform hover:scale-105"
               >
                 <Mail className="h-5 w-5" />
                 Email Safety
