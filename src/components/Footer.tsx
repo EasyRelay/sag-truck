@@ -96,10 +96,10 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                sagtrucking.com
-              </a>
+                sagtrucking.com 
+              </a> (Owner: Amjad Matar)
               <p className="text-xs">
-                USDOT: 3720632 | MC: 1309439 | EIN: 45-2608172 (Owner: Amjad Matar)
+                USDOT: 3720632 | MC: 1309439 | EIN: 45-2608172 
               </p>
             </div>
           </div>
