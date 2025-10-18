@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Industrial-Minimal Dark Theme */
+    --background: 215 25% 7%; /* #0D1117 charcoal */
+    --foreground: 214 18% 83%; /* #BFC9D6 muted silver */
+
+    --card: 217 23% 13%; /* #1F2A37 steel */
+    --card-foreground: 214 18% 83%;
+
+    --popover: 217 23% 13%;
+    --popover-foreground: 214 18% 83%;
+
+    --primary: 217 23% 13%; /* Steel */
+    --primary-foreground: 214 18% 83%;
+
+    --secondary: 34 100% 56%; /* #FF9F1C neon amber */
+    --secondary-foreground: 215 25% 7%;
+
+    --muted: 217 23% 18%; /* Lighter steel */
+    --muted-foreground: 214 12% 60%;
+
+    --accent: 34 100% 56%; /* Neon amber */
+    --accent-foreground: 215 25% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 214 18% 83%;
+
+    --border: 217 23% 18%;
+    --input: 217 23% 18%;
+    --ring: 34 100% 56%;
+
+    --radius: 0.5rem;
+
+    /* Custom design tokens */
+    --surface: 217 23% 13%;
+    --hero-gradient-start: 215 25% 7%;
+    --hero-gradient-end: 217 23% 13%;
+    
+    /* Animation tokens */
+    --transition-smooth: cubic-bezier(0.22, 0.8, 0.1, 1);
+    --transition-lift: cubic-bezier(0.22, 0.8, 0.1, 1);
+    
+    /* Animation durations */
+    --duration-small: 400ms;
+    --duration-medium: 600ms;
+    --duration-large: 900ms;
+  }
+
+  .dark {
+    --background: 215 25% 7%;
+    --foreground: 214 18% 83%;
+    --card: 217 23% 13%;
+    --card-foreground: 214 18% 83%;
+    --popover: 217 23% 13%;
+    --popover-foreground: 214 18% 83%;
+    --primary: 217 23% 13%;
+    --primary-foreground: 214 18% 83%;
+    --secondary: 34 100% 56%;
+    --secondary-foreground: 215 25% 7%;
+    --muted: 217 23% 18%;
+    --muted-foreground: 214 12% 60%;
+    --accent: 34 100% 56%;
+    --accent-foreground: 215 25% 7%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 214 18% 83%;
+    --border: 217 23% 18%;
+    --input: 217 23% 18%;
+    --ring: 34 100% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "kern" 1;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  main {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@layer utilities {
+  /* Scroll Animation Classes */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity var(--duration-medium) var(--transition-smooth),
+                transform var(--duration-medium) var(--transition-smooth);
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-up-scale {
+    opacity: 0;
+    transform: translateY(40px) scale(1.02);
+    transition: opacity var(--duration-medium) var(--transition-smooth),
+                transform var(--duration-medium) var(--transition-smooth);
+  }
+
+  .fade-up-scale.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .slide-right {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity var(--duration-small) var(--transition-smooth),
+                transform var(--duration-small) var(--transition-smooth);
+  }
+
+  .slide-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .card-rotate {
+    opacity: 0;
+    transform: translateY(40px) rotateX(-2deg);
+    transition: opacity var(--duration-medium) var(--transition-smooth),
+                transform var(--duration-medium) var(--transition-smooth);
+  }
+
+  .card-rotate.is-visible {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+
+  .scale-in {
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity var(--duration-small) var(--transition-smooth),
+                transform var(--duration-small) var(--transition-smooth);
+  }
+
+  .scale-in.is-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Hover Effects */
+  .card-lift {
+    transition: transform var(--duration-small) var(--transition-smooth),
+                box-shadow var(--duration-small) ease;
+    will-change: transform;
+  }
+
+  .card-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px -12px hsl(var(--accent) / 0.25);
+  }
+
+  /* Parallax */
+  .parallax {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    .animate-on-scroll,
+    .fade-up-scale,
+    .slide-right,
+    .card-rotate,
+    .scale-in {
+      opacity: 0;
+      transform: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .animate-on-scroll.is-visible,
+    .fade-up-scale.is-visible,
+    .slide-right.is-visible,
+    .card-rotate.is-visible,
+    .scale-in.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    body::before {
+      display: none;
+    }
+  }
+}
