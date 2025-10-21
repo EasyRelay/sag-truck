@@ -242,7 +242,7 @@ const Cookies = () => {
                   Contact
                 </h2>
                 <div className="bg-card rounded-lg p-6 border border-border/50">
-                  <p className="text-foreground font-medium mb-2">Sag Trucking</p>
+                  <p className="text-foreground font-medium mb-2">State Auto Group LLC</p>
                   <p>Phone: +1 440-299-3900</p>
                   <p>Email: safety.saggroup@gmail.com</p>
                 </div>
