@@ -55,21 +55,18 @@ const HeroSection = () => {
             ref={headlineRef}
             className="font-heading font-bold text-5xl md:text-7xl text-foreground leading-tight fade-up-scale"
           >
-            Sag Trucking — Strong. Safe. On Time.
+            <span className="block">STATE AUTO</span>
+            <span className="block text-accent text-4xl md:text-5xl">GROUP LLC</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Modern fleet. Proven compliance. Coast-to-coast lanes with dependable delivery.
+            Strong. Safe. On Time. — Reliable trucking service across the nation.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <a
-              ref={ctaLeftRef}
-              href="tel:+14402993900"
-              className="slide-left"
-            >
+            <a ref={ctaLeftRef} href="tel:+14402993900" className="slide-left">
               <Button
                 size="lg"
                 className="w-full sm:w-auto gap-3 bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 font-bold transition-transform hover:scale-105"
@@ -86,7 +83,7 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto gap-3 border-2 border-muted-foreground/30 text-foreground  text-lg px-8 py-6 font-bold transition-transform hover:scale-105"
+                className="w-full sm:w-auto gap-3 border-2 border-muted-foreground/30 text-foreground text-lg px-8 py-6 font-bold transition-transform hover:scale-105"
               >
                 <Mail className="h-5 w-5" />
                 Email Safety
@@ -95,6 +92,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
     </section>
   );
 };

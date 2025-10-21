@@ -33,26 +33,32 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? 'bg-card/90 backdrop-blur-xl shadow-xl h-16 border-b border-border/50'
           : 'bg-transparent h-20'
-      }`}
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'h-16' : 'h-20'}`}>
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <img 
-                src="/image.png" 
+              <img
+                src="/image.png"
                 alt="Sag Trucking Logo"
                 className={`transition-all group-hover:scale-105 object-contain ${isScrolled ? 'w-20 h-20' : 'w-20 h-20'}`}
               />
             </div>
-            <div className="hidden sm:block">
-              <span className={`font-heading font-bold text-foreground transition-all ${isScrolled ? 'text-lg' : 'text-xl'}`}>Sag Trucking</span>
+            <div className="hidden sm:flex flex-col leading-tight">
+              <span
+                className={`font-heading font-bold text-foreground transition-all ${isScrolled ? 'text-lg' : 'text-xl'
+                  }`}
+              >
+                STATE AUTO
+              </span>
+              <span className="text-accent text-sm tracking-widest">GROUP LLC</span>
             </div>
+
           </Link>
 
           {/* Desktop Navigation */}

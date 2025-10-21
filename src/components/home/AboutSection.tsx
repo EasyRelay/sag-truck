@@ -13,14 +13,14 @@ const AboutSection = () => {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-heading font-bold text-4xl md:text-5xl text-foreground mb-4">
-              About Sag Trucking
+              About State Auto Group LLC
             </h2>
           </div>
 
           <div className="bg-card rounded-xl p-8 md:p-12 border border-border/50">
             <p className="text-muted-foreground leading-relaxed text-lg mb-8">
               Founded with a vision to revolutionize freight through unwavering commitment to
-              safety and service, Sag Trucking has grown from a regional carrier to a trusted
+              safety and service, State Auto Group LLC has grown from a regional carrier to a trusted
               national logistics partner. Under the leadership of owner Amjad Matar, we've built a
               reputation for excellence spanning the continental United States.
             </p>

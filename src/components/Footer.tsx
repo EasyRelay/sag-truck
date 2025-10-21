@@ -9,16 +9,30 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
-          <div>
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-heading font-bold text-xl">ST</span>
+          <div className="flex flex-col space-y-3">
+            <div className="flex items-center space-x-3">
+              <div className="relative">
+                <img
+                  src="/image.png"
+                  alt="Sag Trucking Logo"
+                  className={`transition-all group-hover:scale-105 object-contain w-20 h-20`}
+                />
               </div>
-              <span className="font-heading font-bold text-xl">Sag Trucking</span>
+              <div className="hidden sm:flex flex-col leading-tight">
+                <span
+                  className={`font-heading font-bold text-foreground transition-all text-lg`}
+                >
+                  STATE AUTO
+                </span>
+                <span className="text-accent text-sm tracking-widest">GROUP LLC</span>
+              </div>
             </div>
-            <p className="text-muted-foreground leading-relaxed">
-              National freight carrier committed to safe, reliable transportation.
-            </p>
+
+            <div >
+              <p className="text-muted-foreground leading-relaxed">
+                National freight carrier committed to safe, reliable transportation.
+              </p>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -90,16 +104,16 @@ const Footer = () => {
               </p>
             </div>
             <div className="text-sm text-muted-foreground">
-              <a 
-                href="https://sagtrucking.com" 
+              <a
+                href="https://sagtrucking.com"
                 className="hover:text-accent transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                sagtrucking.com 
+                sagtrucking.com
               </a> (Owner: Amjad Matar)
               <p className="text-xs">
-                USDOT: 3720632 | MC: 1309439 | EIN: 45-2608172 
+                USDOT: 3720632 | MC: 1309439 | EIN: 45-2608172
               </p>
             </div>
           </div>
